@@ -1,0 +1,20 @@
+{"time":"2025-01-07T03:48:16.798410808Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-07T03:48:16.798421789Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250107_034816-kfpo52bm/logs/debug-core.log"}
+{"time":"2025-01-07T03:48:16.900716965Z","level":"INFO","msg":"created new stream","id":"kfpo52bm"}
+{"time":"2025-01-07T03:48:16.900747406Z","level":"INFO","msg":"stream: started","id":"kfpo52bm"}
+{"time":"2025-01-07T03:48:16.900792193Z","level":"INFO","msg":"writer: Do: started","stream_id":"kfpo52bm"}
+{"time":"2025-01-07T03:48:16.900808416Z","level":"INFO","msg":"handler: started","stream_id":"kfpo52bm"}
+{"time":"2025-01-07T03:48:16.901213383Z","level":"INFO","msg":"sender: started","stream_id":"kfpo52bm"}
+{"time":"2025-01-07T03:48:17.210363897Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-07T04:08:58.209814473Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-07T04:08:58.210538467Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-07T04:08:58.537877757Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-07T04:08:58.537891888Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-07T04:08:58.537903127Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-07T04:08:59.181880276Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.473361231,"progress":"15.2KB/15.2KB"}],"total_operations":1}}
+{"time":"2025-01-07T04:08:59.351868881Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-07T04:09:00.543947897Z","level":"INFO","msg":"stream: closing","id":"kfpo52bm"}
+{"time":"2025-01-07T04:09:00.543977155Z","level":"INFO","msg":"handler: closed","stream_id":"kfpo52bm"}
+{"time":"2025-01-07T04:09:00.543989536Z","level":"INFO","msg":"writer: Close: closed","stream_id":"kfpo52bm"}
+{"time":"2025-01-07T04:09:00.544003191Z","level":"INFO","msg":"sender: closed","stream_id":"kfpo52bm"}
+{"time":"2025-01-07T04:09:00.544054804Z","level":"INFO","msg":"stream: closed","id":"kfpo52bm"}

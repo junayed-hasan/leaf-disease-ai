@@ -1,0 +1,20 @@
+{"time":"2025-01-20T19:40:23.117057295Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-20T19:40:23.117075025Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250120_194023-n801l7um/logs/debug-core.log"}
+{"time":"2025-01-20T19:40:23.21979717Z","level":"INFO","msg":"created new stream","id":"n801l7um"}
+{"time":"2025-01-20T19:40:23.219834988Z","level":"INFO","msg":"stream: started","id":"n801l7um"}
+{"time":"2025-01-20T19:40:23.21985961Z","level":"INFO","msg":"writer: Do: started","stream_id":"n801l7um"}
+{"time":"2025-01-20T19:40:23.219865976Z","level":"INFO","msg":"sender: started","stream_id":"n801l7um"}
+{"time":"2025-01-20T19:40:23.219879359Z","level":"INFO","msg":"handler: started","stream_id":"n801l7um"}
+{"time":"2025-01-20T19:40:23.490998305Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-20T20:03:46.652251152Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-20T20:03:46.652994176Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-20T20:03:46.966672029Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-20T20:03:46.966690588Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-20T20:03:46.966697406Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-20T20:03:47.65311772Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.666213278,"progress":"250B/250B"},{"desc":"uploading output.log","runtime_seconds":0.522329967,"progress":"16.7KB/16.7KB"},{"desc":"uploading config.yaml","runtime_seconds":0.522317439,"progress":"1.1KB/1.1KB"}],"total_operations":3}}
+{"time":"2025-01-20T20:03:47.829311654Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-20T20:03:49.033735407Z","level":"INFO","msg":"stream: closing","id":"n801l7um"}
+{"time":"2025-01-20T20:03:49.033760261Z","level":"INFO","msg":"handler: closed","stream_id":"n801l7um"}
+{"time":"2025-01-20T20:03:49.03377587Z","level":"INFO","msg":"writer: Close: closed","stream_id":"n801l7um"}
+{"time":"2025-01-20T20:03:49.033795468Z","level":"INFO","msg":"sender: closed","stream_id":"n801l7um"}
+{"time":"2025-01-20T20:03:49.033847274Z","level":"INFO","msg":"stream: closed","id":"n801l7um"}

@@ -1,0 +1,19 @@
+{"time":"2025-01-11T16:01:12.087365616Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-11T16:01:12.087382787Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250111_160112-gfb4mxr9/logs/debug-core.log"}
+{"time":"2025-01-11T16:01:12.189540168Z","level":"INFO","msg":"created new stream","id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:12.189573169Z","level":"INFO","msg":"stream: started","id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:12.189609353Z","level":"INFO","msg":"writer: Do: started","stream_id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:12.189627762Z","level":"INFO","msg":"handler: started","stream_id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:12.189712859Z","level":"INFO","msg":"sender: started","stream_id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:12.435393251Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T16:01:33.918579126Z","level":"INFO","msg":"stream: closing","id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:33.918605371Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T16:01:33.919182175Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T16:01:34.046600343Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-11T16:01:34.046615226Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-11T16:01:34.046622103Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-11T16:01:34.916778897Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T16:01:35.067892168Z","level":"INFO","msg":"handler: closed","stream_id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:35.067923614Z","level":"INFO","msg":"sender: closed","stream_id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:35.067924072Z","level":"INFO","msg":"writer: Close: closed","stream_id":"gfb4mxr9"}
+{"time":"2025-01-11T16:01:35.068007836Z","level":"INFO","msg":"stream: closed","id":"gfb4mxr9"}

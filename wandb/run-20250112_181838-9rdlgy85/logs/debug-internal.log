@@ -1,0 +1,20 @@
+{"time":"2025-01-12T18:18:38.506920848Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-12T18:18:38.506936727Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250112_181838-9rdlgy85/logs/debug-core.log"}
+{"time":"2025-01-12T18:18:38.608893264Z","level":"INFO","msg":"created new stream","id":"9rdlgy85"}
+{"time":"2025-01-12T18:18:38.608919715Z","level":"INFO","msg":"stream: started","id":"9rdlgy85"}
+{"time":"2025-01-12T18:18:38.608957888Z","level":"INFO","msg":"writer: Do: started","stream_id":"9rdlgy85"}
+{"time":"2025-01-12T18:18:38.608980327Z","level":"INFO","msg":"handler: started","stream_id":"9rdlgy85"}
+{"time":"2025-01-12T18:18:38.609627791Z","level":"INFO","msg":"sender: started","stream_id":"9rdlgy85"}
+{"time":"2025-01-12T18:18:38.883580072Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-12T19:36:19.849537257Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-12T19:36:19.850125327Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-12T19:36:20.138958865Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-12T19:36:20.1389785Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-12T19:36:20.13898523Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-12T19:36:20.832374569Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-12T19:36:20.850060632Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history, summary, console logs","runtime_seconds":0.017468795}],"total_operations":1}}
+{"time":"2025-01-12T19:36:22.026733425Z","level":"INFO","msg":"stream: closing","id":"9rdlgy85"}
+{"time":"2025-01-12T19:36:22.026760679Z","level":"INFO","msg":"handler: closed","stream_id":"9rdlgy85"}
+{"time":"2025-01-12T19:36:22.026774261Z","level":"INFO","msg":"writer: Close: closed","stream_id":"9rdlgy85"}
+{"time":"2025-01-12T19:36:22.026792626Z","level":"INFO","msg":"sender: closed","stream_id":"9rdlgy85"}
+{"time":"2025-01-12T19:36:22.026840421Z","level":"INFO","msg":"stream: closed","id":"9rdlgy85"}

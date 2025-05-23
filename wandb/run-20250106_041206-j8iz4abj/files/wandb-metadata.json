@@ -1,0 +1,43 @@
+{
+  "os": "Linux-4.19.0-27-cloud-amd64-x86_64-with-debian-10.13",
+  "python": "3.7.12",
+  "startedAt": "2025-01-06T04:12:06.969895Z",
+  "args": [
+    "--model",
+    "resnet101"
+  ],
+  "program": "train.py",
+  "codePath": "train.py",
+  "email": "junayedhasan100@gmail.com",
+  "root": "/home/myuser/tomato_leaf_disease",
+  "host": "instance-1",
+  "username": "myuser",
+  "executable": "/opt/conda/bin/python",
+  "codePathLocal": "train.py",
+  "cpu_count": 2,
+  "cpu_count_logical": 4,
+  "gpu": "Tesla T4",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "105426538496",
+      "used": "50716819456"
+    }
+  },
+  "memory": {
+    "total": "15764115456"
+  },
+  "cpu": {
+    "count": 2,
+    "countLogical": 4
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla T4",
+      "memoryTotal": "16106127360",
+      "cudaCores": 2560,
+      "architecture": "Turing"
+    }
+  ],
+  "cudaVersion": "11.6"
+}

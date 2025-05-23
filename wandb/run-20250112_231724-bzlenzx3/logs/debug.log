@@ -1,0 +1,32 @@
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Configure stats pid to 19515
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Loading settings from /home/myuser/.config/wandb/settings
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Loading settings from /home/myuser/tomato_leaf_disease/wandb/settings
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/home/myuser/tomato_leaf_disease/train.py', 'program': 'train.py'}
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-01-12 23:17:24,671 INFO    MainThread:19515 [wandb_init.py:_log_setup():533] Logging user logs to /home/myuser/tomato_leaf_disease/wandb/run-20250112_231724-bzlenzx3/logs/debug.log
+2025-01-12 23:17:24,672 INFO    MainThread:19515 [wandb_init.py:_log_setup():534] Logging internal logs to /home/myuser/tomato_leaf_disease/wandb/run-20250112_231724-bzlenzx3/logs/debug-internal.log
+2025-01-12 23:17:24,672 INFO    MainThread:19515 [wandb_init.py:init():619] calling init triggers
+2025-01-12 23:17:24,672 INFO    MainThread:19515 [wandb_init.py:init():627] wandb.init called with sweep_config: {}
+config: {'architecture': 'swin_tiny', 'dataset': 'TomatoVillage', 'dataset_type': 'split_directory', 'epochs': 100, 'batch_size': 16, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'image_size': 224, 'pretrained': True, 'experiment_name': 'tomatovillage_swin_tiny', 'output_dir': 'outputs/swin_tiny/tomatovillage_swin_tiny_20250112231724'}
+2025-01-12 23:17:24,672 INFO    MainThread:19515 [wandb_init.py:init():669] starting backend
+2025-01-12 23:17:24,672 INFO    MainThread:19515 [wandb_init.py:init():673] sending inform_init request
+2025-01-12 23:17:24,673 INFO    MainThread:19515 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-12 23:17:24,674 INFO    MainThread:19515 [wandb_init.py:init():686] backend started and connected
+2025-01-12 23:17:24,679 INFO    MainThread:19515 [wandb_init.py:init():781] updated telemetry
+2025-01-12 23:17:24,679 INFO    MainThread:19515 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2025-01-12 23:17:25,009 INFO    MainThread:19515 [wandb_init.py:init():867] starting run threads in backend
+2025-01-12 23:17:25,266 INFO    MainThread:19515 [wandb_run.py:_console_start():2456] atexit reg
+2025-01-12 23:17:25,266 INFO    MainThread:19515 [wandb_run.py:_redirect():2305] redirect: wrap_raw
+2025-01-12 23:17:25,266 INFO    MainThread:19515 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-01-12 23:17:25,267 INFO    MainThread:19515 [wandb_run.py:_redirect():2395] Redirects installed.
+2025-01-12 23:17:25,269 INFO    MainThread:19515 [wandb_init.py:init():911] run started, returning control to user process
+2025-01-12 23:25:21,740 INFO    MainThread:19515 [wandb_run.py:_finish():2155] finishing run junayedhasan100-johns-hopkins-university/tomato-disease-classification/bzlenzx3
+2025-01-12 23:25:21,740 INFO    MainThread:19515 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2025-01-12 23:25:21,740 INFO    MainThread:19515 [wandb_run.py:_restore():2402] restore
+2025-01-12 23:25:21,740 INFO    MainThread:19515 [wandb_run.py:_restore():2408] restore done
+2025-01-12 23:25:24,045 INFO    MainThread:19515 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2025-01-12 23:25:24,045 INFO    MainThread:19515 [wandb_run.py:_footer_history_summary_info():3992] rendering summary
+2025-01-12 23:25:24,053 INFO    MainThread:19515 [wandb_run.py:_footer_sync_info():3921] logging synced files

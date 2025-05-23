@@ -1,0 +1,19 @@
+{"time":"2025-01-06T23:29:40.714309943Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-06T23:29:40.714328463Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250106_232940-8ox087wt/logs/debug-core.log"}
+{"time":"2025-01-06T23:29:40.815914414Z","level":"INFO","msg":"created new stream","id":"8ox087wt"}
+{"time":"2025-01-06T23:29:40.815944993Z","level":"INFO","msg":"stream: started","id":"8ox087wt"}
+{"time":"2025-01-06T23:29:40.816007254Z","level":"INFO","msg":"writer: Do: started","stream_id":"8ox087wt"}
+{"time":"2025-01-06T23:29:40.816040035Z","level":"INFO","msg":"sender: started","stream_id":"8ox087wt"}
+{"time":"2025-01-06T23:29:40.816083528Z","level":"INFO","msg":"handler: started","stream_id":"8ox087wt"}
+{"time":"2025-01-06T23:29:41.102464394Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-06T23:29:47.655282624Z","level":"INFO","msg":"stream: closing","id":"8ox087wt"}
+{"time":"2025-01-06T23:29:47.655343447Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-06T23:29:47.655928305Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-06T23:29:47.795116196Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-06T23:29:47.795135028Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-06T23:29:47.795140803Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-06T23:29:48.172107502Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-06T23:29:48.347706285Z","level":"INFO","msg":"handler: closed","stream_id":"8ox087wt"}
+{"time":"2025-01-06T23:29:48.347745685Z","level":"INFO","msg":"sender: closed","stream_id":"8ox087wt"}
+{"time":"2025-01-06T23:29:48.347734385Z","level":"INFO","msg":"writer: Close: closed","stream_id":"8ox087wt"}
+{"time":"2025-01-06T23:29:48.347833586Z","level":"INFO","msg":"stream: closed","id":"8ox087wt"}

@@ -1,0 +1,19 @@
+{"time":"2025-01-06T23:39:07.043647055Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-06T23:39:07.043658794Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250106_233907-teazz81d/logs/debug-core.log"}
+{"time":"2025-01-06T23:39:07.145932859Z","level":"INFO","msg":"created new stream","id":"teazz81d"}
+{"time":"2025-01-06T23:39:07.145967647Z","level":"INFO","msg":"stream: started","id":"teazz81d"}
+{"time":"2025-01-06T23:39:07.146014185Z","level":"INFO","msg":"writer: Do: started","stream_id":"teazz81d"}
+{"time":"2025-01-06T23:39:07.146019657Z","level":"INFO","msg":"sender: started","stream_id":"teazz81d"}
+{"time":"2025-01-06T23:39:07.146024703Z","level":"INFO","msg":"handler: started","stream_id":"teazz81d"}
+{"time":"2025-01-06T23:39:07.526333523Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-06T23:39:13.993338781Z","level":"INFO","msg":"stream: closing","id":"teazz81d"}
+{"time":"2025-01-06T23:39:13.993368411Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-06T23:39:13.994139858Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-06T23:39:14.132161877Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-06T23:39:14.132185336Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-06T23:39:14.132190244Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-06T23:39:14.499362068Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-06T23:39:14.677277227Z","level":"INFO","msg":"handler: closed","stream_id":"teazz81d"}
+{"time":"2025-01-06T23:39:14.677315797Z","level":"INFO","msg":"writer: Close: closed","stream_id":"teazz81d"}
+{"time":"2025-01-06T23:39:14.677356729Z","level":"INFO","msg":"sender: closed","stream_id":"teazz81d"}
+{"time":"2025-01-06T23:39:14.677383406Z","level":"INFO","msg":"stream: closed","id":"teazz81d"}

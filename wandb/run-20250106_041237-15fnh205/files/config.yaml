@@ -1,0 +1,49 @@
+_wandb:
+    value:
+        cli_version: 0.18.7
+        m: []
+        python_version: 3.7.12
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+                - 55
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+                - 55
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.7.12
+            "5": 0.18.7
+            "8":
+                - 5
+            "12": 0.18.7
+            "13": linux-x86_64
+architecture:
+    value: resnet101
+batch_size:
+    value: 64
+dataset:
+    value: PlantVillage
+epochs:
+    value: 100
+experiment_name:
+    value: baseline_resnet101
+image_size:
+    value: 224
+learning_rate:
+    value: 0.001
+output_dir:
+    value: outputs/resnet101/baseline_resnet101_20250106_041237
+pretrained:
+    value: true
+weight_decay:
+    value: 0.0001

@@ -1,0 +1,20 @@
+{"time":"2025-01-07T04:21:12.211299201Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-07T04:21:12.211315653Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250107_042112-xfswwieq/logs/debug-core.log"}
+{"time":"2025-01-07T04:21:12.313124399Z","level":"INFO","msg":"created new stream","id":"xfswwieq"}
+{"time":"2025-01-07T04:21:12.313159591Z","level":"INFO","msg":"stream: started","id":"xfswwieq"}
+{"time":"2025-01-07T04:21:12.313251629Z","level":"INFO","msg":"handler: started","stream_id":"xfswwieq"}
+{"time":"2025-01-07T04:21:12.31326135Z","level":"INFO","msg":"sender: started","stream_id":"xfswwieq"}
+{"time":"2025-01-07T04:21:12.313665856Z","level":"INFO","msg":"writer: Do: started","stream_id":"xfswwieq"}
+{"time":"2025-01-07T04:21:12.618114734Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-07T07:11:29.972171277Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-07T07:11:29.972913333Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-07T07:11:30.264847431Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-07T07:11:30.264870196Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-07T07:11:30.264879278Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-07T07:11:30.971862316Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-07T07:11:30.972761965Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading summary, console logs","runtime_seconds":0.000669251}],"total_operations":1}}
+{"time":"2025-01-07T07:11:32.14753504Z","level":"INFO","msg":"stream: closing","id":"xfswwieq"}
+{"time":"2025-01-07T07:11:32.14755704Z","level":"INFO","msg":"handler: closed","stream_id":"xfswwieq"}
+{"time":"2025-01-07T07:11:32.147569555Z","level":"INFO","msg":"writer: Close: closed","stream_id":"xfswwieq"}
+{"time":"2025-01-07T07:11:32.147596934Z","level":"INFO","msg":"sender: closed","stream_id":"xfswwieq"}
+{"time":"2025-01-07T07:11:32.147629899Z","level":"INFO","msg":"stream: closed","id":"xfswwieq"}

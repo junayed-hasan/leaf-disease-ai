@@ -1,0 +1,20 @@
+{"time":"2025-01-11T16:45:48.873181835Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-11T16:45:48.873193201Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250111_164548-0ycapr0f/logs/debug-core.log"}
+{"time":"2025-01-11T16:45:48.974881765Z","level":"INFO","msg":"created new stream","id":"0ycapr0f"}
+{"time":"2025-01-11T16:45:48.974912834Z","level":"INFO","msg":"stream: started","id":"0ycapr0f"}
+{"time":"2025-01-11T16:45:48.974942085Z","level":"INFO","msg":"writer: Do: started","stream_id":"0ycapr0f"}
+{"time":"2025-01-11T16:45:48.974966034Z","level":"INFO","msg":"sender: started","stream_id":"0ycapr0f"}
+{"time":"2025-01-11T16:45:48.974961346Z","level":"INFO","msg":"handler: started","stream_id":"0ycapr0f"}
+{"time":"2025-01-11T16:45:49.205583426Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T17:09:11.355484023Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T17:09:11.356145836Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T17:09:11.631620028Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-11T17:09:11.631633161Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-11T17:09:11.631637853Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-11T17:09:12.093088074Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T17:09:12.260280511Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-01-11T17:09:13.271448162Z","level":"INFO","msg":"stream: closing","id":"0ycapr0f"}
+{"time":"2025-01-11T17:09:13.271472849Z","level":"INFO","msg":"handler: closed","stream_id":"0ycapr0f"}
+{"time":"2025-01-11T17:09:13.271496692Z","level":"INFO","msg":"writer: Close: closed","stream_id":"0ycapr0f"}
+{"time":"2025-01-11T17:09:13.271527407Z","level":"INFO","msg":"sender: closed","stream_id":"0ycapr0f"}
+{"time":"2025-01-11T17:09:13.271569931Z","level":"INFO","msg":"stream: closed","id":"0ycapr0f"}

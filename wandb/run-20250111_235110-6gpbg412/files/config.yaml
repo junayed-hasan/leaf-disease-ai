@@ -1,0 +1,56 @@
+_wandb:
+    value:
+        cli_version: 0.18.7
+        m: []
+        python_version: 3.7.12
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 49
+                - 53
+                - 55
+                - 63
+            "2":
+                - 1
+                - 5
+                - 41
+                - 49
+                - 53
+                - 55
+                - 63
+            "3":
+                - 2
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.7.12
+            "5": 0.18.7
+            "8":
+                - 5
+            "12": 0.18.7
+            "13": linux-x86_64
+architecture:
+    value: efficientnet_b0
+batch_size:
+    value: 16
+dataset:
+    value: TomatoVillage
+dataset_type:
+    value: split_directory
+epochs:
+    value: 100
+experiment_name:
+    value: tomato_efficientnet_b0
+image_size:
+    value: 224
+learning_rate:
+    value: 0.001
+output_dir:
+    value: outputs/efficientnet_b0/tomato_efficientnet_b0_20250111235109
+pretrained:
+    value: true
+weight_decay:
+    value: 0.0001

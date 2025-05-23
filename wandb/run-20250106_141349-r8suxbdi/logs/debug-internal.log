@@ -1,0 +1,19 @@
+{"time":"2025-01-06T14:13:49.407043062Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-06T14:13:49.407066071Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250106_141349-r8suxbdi/logs/debug-core.log"}
+{"time":"2025-01-06T14:13:49.511827599Z","level":"INFO","msg":"created new stream","id":"r8suxbdi"}
+{"time":"2025-01-06T14:13:49.511858225Z","level":"INFO","msg":"stream: started","id":"r8suxbdi"}
+{"time":"2025-01-06T14:13:49.51194796Z","level":"INFO","msg":"handler: started","stream_id":"r8suxbdi"}
+{"time":"2025-01-06T14:13:49.512699443Z","level":"INFO","msg":"writer: Do: started","stream_id":"r8suxbdi"}
+{"time":"2025-01-06T14:13:49.512699439Z","level":"INFO","msg":"sender: started","stream_id":"r8suxbdi"}
+{"time":"2025-01-06T14:13:49.822663666Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-06T14:45:21.209357768Z","level":"INFO","msg":"stream: closing","id":"r8suxbdi"}
+{"time":"2025-01-06T14:45:21.209394993Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-06T14:45:21.210049146Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-06T14:45:21.357027495Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-06T14:45:21.357043239Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-06T14:45:21.357047602Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-06T14:45:21.758579049Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-06T14:45:21.940129691Z","level":"INFO","msg":"handler: closed","stream_id":"r8suxbdi"}
+{"time":"2025-01-06T14:45:21.940178701Z","level":"INFO","msg":"writer: Close: closed","stream_id":"r8suxbdi"}
+{"time":"2025-01-06T14:45:21.940200406Z","level":"INFO","msg":"sender: closed","stream_id":"r8suxbdi"}
+{"time":"2025-01-06T14:45:21.940237586Z","level":"INFO","msg":"stream: closed","id":"r8suxbdi"}

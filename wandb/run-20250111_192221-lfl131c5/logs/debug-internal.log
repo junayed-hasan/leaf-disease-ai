@@ -1,0 +1,20 @@
+{"time":"2025-01-11T19:22:21.785750413Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-11T19:22:21.785763561Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250111_192221-lfl131c5/logs/debug-core.log"}
+{"time":"2025-01-11T19:22:21.888284491Z","level":"INFO","msg":"created new stream","id":"lfl131c5"}
+{"time":"2025-01-11T19:22:21.888318545Z","level":"INFO","msg":"stream: started","id":"lfl131c5"}
+{"time":"2025-01-11T19:22:21.888339521Z","level":"INFO","msg":"writer: Do: started","stream_id":"lfl131c5"}
+{"time":"2025-01-11T19:22:21.888371207Z","level":"INFO","msg":"sender: started","stream_id":"lfl131c5"}
+{"time":"2025-01-11T19:22:21.888399386Z","level":"INFO","msg":"handler: started","stream_id":"lfl131c5"}
+{"time":"2025-01-11T19:22:22.220740308Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T19:28:40.205596647Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T19:28:40.206221615Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T19:28:40.499921668Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-11T19:28:40.499939078Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-11T19:28:40.499946001Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-11T19:28:41.20632576Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.544342729,"progress":"1.1KB/1.1KB"},{"desc":"uploading output.log","runtime_seconds":0.54433505,"progress":"9.8KB/9.8KB"}],"total_operations":2}}
+{"time":"2025-01-11T19:28:41.325624357Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T19:28:42.497283297Z","level":"INFO","msg":"stream: closing","id":"lfl131c5"}
+{"time":"2025-01-11T19:28:42.497312628Z","level":"INFO","msg":"handler: closed","stream_id":"lfl131c5"}
+{"time":"2025-01-11T19:28:42.497325077Z","level":"INFO","msg":"writer: Close: closed","stream_id":"lfl131c5"}
+{"time":"2025-01-11T19:28:42.497346946Z","level":"INFO","msg":"sender: closed","stream_id":"lfl131c5"}
+{"time":"2025-01-11T19:28:42.497399237Z","level":"INFO","msg":"stream: closed","id":"lfl131c5"}

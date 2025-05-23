@@ -1,0 +1,32 @@
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Configure stats pid to 23173
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Loading settings from /home/myuser/.config/wandb/settings
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Loading settings from /home/myuser/tomato_leaf_disease/wandb/settings
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/home/myuser/tomato_leaf_disease/train.py', 'program': 'train.py'}
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_init.py:_log_setup():533] Logging user logs to /home/myuser/tomato_leaf_disease/wandb/run-20250120_161718-u5mdbhyr/logs/debug.log
+2025-01-20 16:17:18,088 INFO    MainThread:23173 [wandb_init.py:_log_setup():534] Logging internal logs to /home/myuser/tomato_leaf_disease/wandb/run-20250120_161718-u5mdbhyr/logs/debug-internal.log
+2025-01-20 16:17:18,089 INFO    MainThread:23173 [wandb_init.py:init():619] calling init triggers
+2025-01-20 16:17:18,089 INFO    MainThread:23173 [wandb_init.py:init():627] wandb.init called with sweep_config: {}
+config: {'architecture': 'efficientnet_b4', 'dataset': 'Combined', 'dataset_type': 'single_directory', 'epochs': 100, 'batch_size': 16, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'image_size': 380, 'pretrained': True, 'experiment_name': 'combined_efficientnet_b4', 'output_dir': 'outputs/efficientnet_b4/combined_efficientnet_b4_20250120161717'}
+2025-01-20 16:17:18,089 INFO    MainThread:23173 [wandb_init.py:init():669] starting backend
+2025-01-20 16:17:18,089 INFO    MainThread:23173 [wandb_init.py:init():673] sending inform_init request
+2025-01-20 16:17:18,091 INFO    MainThread:23173 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-20 16:17:18,091 INFO    MainThread:23173 [wandb_init.py:init():686] backend started and connected
+2025-01-20 16:17:18,097 INFO    MainThread:23173 [wandb_init.py:init():781] updated telemetry
+2025-01-20 16:17:18,098 INFO    MainThread:23173 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2025-01-20 16:17:18,571 INFO    MainThread:23173 [wandb_init.py:init():867] starting run threads in backend
+2025-01-20 16:17:19,501 INFO    MainThread:23173 [wandb_run.py:_console_start():2456] atexit reg
+2025-01-20 16:17:19,501 INFO    MainThread:23173 [wandb_run.py:_redirect():2305] redirect: wrap_raw
+2025-01-20 16:17:19,502 INFO    MainThread:23173 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-01-20 16:17:19,502 INFO    MainThread:23173 [wandb_run.py:_redirect():2395] Redirects installed.
+2025-01-20 16:17:19,508 INFO    MainThread:23173 [wandb_init.py:init():911] run started, returning control to user process
+2025-01-20 19:38:27,401 INFO    MainThread:23173 [wandb_run.py:_finish():2155] finishing run junayedhasan100-johns-hopkins-university/tomato-disease-classification/u5mdbhyr
+2025-01-20 19:38:27,402 INFO    MainThread:23173 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2025-01-20 19:38:27,402 INFO    MainThread:23173 [wandb_run.py:_restore():2402] restore
+2025-01-20 19:38:27,402 INFO    MainThread:23173 [wandb_run.py:_restore():2408] restore done
+2025-01-20 19:38:29,752 INFO    MainThread:23173 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2025-01-20 19:38:29,753 INFO    MainThread:23173 [wandb_run.py:_footer_history_summary_info():3992] rendering summary
+2025-01-20 19:38:29,759 INFO    MainThread:23173 [wandb_run.py:_footer_sync_info():3921] logging synced files

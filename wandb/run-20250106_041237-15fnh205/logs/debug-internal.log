@@ -1,0 +1,19 @@
+{"time":"2025-01-06T04:12:37.674400458Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-06T04:12:37.674412828Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250106_041237-15fnh205/logs/debug-core.log"}
+{"time":"2025-01-06T04:12:37.776006457Z","level":"INFO","msg":"created new stream","id":"15fnh205"}
+{"time":"2025-01-06T04:12:37.776043214Z","level":"INFO","msg":"stream: started","id":"15fnh205"}
+{"time":"2025-01-06T04:12:37.776099872Z","level":"INFO","msg":"sender: started","stream_id":"15fnh205"}
+{"time":"2025-01-06T04:12:37.776156251Z","level":"INFO","msg":"handler: started","stream_id":"15fnh205"}
+{"time":"2025-01-06T04:12:37.776513194Z","level":"INFO","msg":"writer: Do: started","stream_id":"15fnh205"}
+{"time":"2025-01-06T04:12:38.082918705Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-06T05:22:12.386405081Z","level":"INFO","msg":"stream: closing","id":"15fnh205"}
+{"time":"2025-01-06T05:22:12.386436199Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-06T05:22:12.387117936Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-06T05:22:12.555977411Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-06T05:22:12.55599219Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-06T05:22:12.555996814Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-06T05:22:12.929605886Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-06T05:22:13.120583738Z","level":"INFO","msg":"handler: closed","stream_id":"15fnh205"}
+{"time":"2025-01-06T05:22:13.120629582Z","level":"INFO","msg":"writer: Close: closed","stream_id":"15fnh205"}
+{"time":"2025-01-06T05:22:13.120654353Z","level":"INFO","msg":"sender: closed","stream_id":"15fnh205"}
+{"time":"2025-01-06T05:22:13.120702648Z","level":"INFO","msg":"stream: closed","id":"15fnh205"}

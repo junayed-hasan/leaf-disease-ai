@@ -1,0 +1,20 @@
+{"time":"2025-01-11T18:05:08.297172609Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-11T18:05:08.297190233Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250111_180508-9kp3scc3/logs/debug-core.log"}
+{"time":"2025-01-11T18:05:08.399189454Z","level":"INFO","msg":"created new stream","id":"9kp3scc3"}
+{"time":"2025-01-11T18:05:08.399215894Z","level":"INFO","msg":"stream: started","id":"9kp3scc3"}
+{"time":"2025-01-11T18:05:08.399250923Z","level":"INFO","msg":"writer: Do: started","stream_id":"9kp3scc3"}
+{"time":"2025-01-11T18:05:08.399273206Z","level":"INFO","msg":"sender: started","stream_id":"9kp3scc3"}
+{"time":"2025-01-11T18:05:08.399291545Z","level":"INFO","msg":"handler: started","stream_id":"9kp3scc3"}
+{"time":"2025-01-11T18:05:08.677905837Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T18:17:51.397071535Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T18:17:51.397594892Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T18:17:51.67397439Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-11T18:17:51.673988415Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-11T18:17:51.673993205Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-11T18:17:52.397821243Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.562280439,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.562267684,"progress":"11.6KB/11.6KB"}],"total_operations":2}}
+{"time":"2025-01-11T18:17:52.498355519Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T18:17:53.671232591Z","level":"INFO","msg":"stream: closing","id":"9kp3scc3"}
+{"time":"2025-01-11T18:17:53.671260515Z","level":"INFO","msg":"handler: closed","stream_id":"9kp3scc3"}
+{"time":"2025-01-11T18:17:53.671273568Z","level":"INFO","msg":"writer: Close: closed","stream_id":"9kp3scc3"}
+{"time":"2025-01-11T18:17:53.67128666Z","level":"INFO","msg":"sender: closed","stream_id":"9kp3scc3"}
+{"time":"2025-01-11T18:17:53.671334834Z","level":"INFO","msg":"stream: closed","id":"9kp3scc3"}

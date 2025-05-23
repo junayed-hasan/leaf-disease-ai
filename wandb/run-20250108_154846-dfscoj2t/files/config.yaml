@@ -1,0 +1,53 @@
+_wandb:
+    value:
+        cli_version: 0.18.7
+        m: []
+        python_version: 3.7.12
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 49
+                - 53
+                - 55
+                - 63
+            "2":
+                - 1
+                - 5
+                - 41
+                - 49
+                - 53
+                - 55
+                - 63
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.7.12
+            "5": 0.18.7
+            "8":
+                - 5
+            "12": 0.18.7
+            "13": linux-x86_64
+architecture:
+    value: swin_base
+batch_size:
+    value: 64
+dataset:
+    value: PlantVillage
+epochs:
+    value: 100
+experiment_name:
+    value: baseline_swin_base
+image_size:
+    value: 224
+learning_rate:
+    value: 0.001
+output_dir:
+    value: outputs/swin_base/baseline_swin_base_20250108154845
+pretrained:
+    value: true
+weight_decay:
+    value: 0.0001

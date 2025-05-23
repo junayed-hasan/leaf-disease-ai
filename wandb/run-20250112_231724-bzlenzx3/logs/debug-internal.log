@@ -1,0 +1,20 @@
+{"time":"2025-01-12T23:17:24.67528149Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-12T23:17:24.675292794Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250112_231724-bzlenzx3/logs/debug-core.log"}
+{"time":"2025-01-12T23:17:24.776921676Z","level":"INFO","msg":"created new stream","id":"bzlenzx3"}
+{"time":"2025-01-12T23:17:24.776951459Z","level":"INFO","msg":"stream: started","id":"bzlenzx3"}
+{"time":"2025-01-12T23:17:24.777000576Z","level":"INFO","msg":"writer: Do: started","stream_id":"bzlenzx3"}
+{"time":"2025-01-12T23:17:24.777013723Z","level":"INFO","msg":"handler: started","stream_id":"bzlenzx3"}
+{"time":"2025-01-12T23:17:24.777437101Z","level":"INFO","msg":"sender: started","stream_id":"bzlenzx3"}
+{"time":"2025-01-12T23:17:25.013698309Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-12T23:25:21.741656167Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-12T23:25:21.742202047Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-12T23:25:22.035415479Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-12T23:25:22.035429438Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-12T23:25:22.035434363Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-12T23:25:22.742316454Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.544365932,"progress":"12.8KB/12.8KB"}],"total_operations":1}}
+{"time":"2025-01-12T23:25:22.846869027Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-12T23:25:24.054143523Z","level":"INFO","msg":"stream: closing","id":"bzlenzx3"}
+{"time":"2025-01-12T23:25:24.054172594Z","level":"INFO","msg":"handler: closed","stream_id":"bzlenzx3"}
+{"time":"2025-01-12T23:25:24.054184337Z","level":"INFO","msg":"writer: Close: closed","stream_id":"bzlenzx3"}
+{"time":"2025-01-12T23:25:24.054207448Z","level":"INFO","msg":"sender: closed","stream_id":"bzlenzx3"}
+{"time":"2025-01-12T23:25:24.054252482Z","level":"INFO","msg":"stream: closed","id":"bzlenzx3"}

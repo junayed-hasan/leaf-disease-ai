@@ -1,0 +1,20 @@
+{"time":"2025-01-08T22:39:05.516309683Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-08T22:39:05.516322011Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250108_223905-jfezarn3/logs/debug-core.log"}
+{"time":"2025-01-08T22:39:05.618627135Z","level":"INFO","msg":"created new stream","id":"jfezarn3"}
+{"time":"2025-01-08T22:39:05.618658673Z","level":"INFO","msg":"stream: started","id":"jfezarn3"}
+{"time":"2025-01-08T22:39:05.618699158Z","level":"INFO","msg":"writer: Do: started","stream_id":"jfezarn3"}
+{"time":"2025-01-08T22:39:05.618721304Z","level":"INFO","msg":"handler: started","stream_id":"jfezarn3"}
+{"time":"2025-01-08T22:39:05.619138656Z","level":"INFO","msg":"sender: started","stream_id":"jfezarn3"}
+{"time":"2025-01-08T22:39:05.913372422Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-09T09:05:08.154160852Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-09T09:05:08.154894864Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-09T09:05:08.513700539Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-09T09:05:08.513720646Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-09T09:05:08.513727437Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-09T09:05:08.904215274Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-09T09:05:09.082697054Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-01-09T09:05:10.093903959Z","level":"INFO","msg":"stream: closing","id":"jfezarn3"}
+{"time":"2025-01-09T09:05:10.09392748Z","level":"INFO","msg":"handler: closed","stream_id":"jfezarn3"}
+{"time":"2025-01-09T09:05:10.093944559Z","level":"INFO","msg":"writer: Close: closed","stream_id":"jfezarn3"}
+{"time":"2025-01-09T09:05:10.09396457Z","level":"INFO","msg":"sender: closed","stream_id":"jfezarn3"}
+{"time":"2025-01-09T09:05:10.094014912Z","level":"INFO","msg":"stream: closed","id":"jfezarn3"}

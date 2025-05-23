@@ -1,0 +1,19 @@
+{"time":"2025-01-11T16:04:49.661827903Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-11T16:04:49.66184385Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250111_160449-v2klqlin/logs/debug-core.log"}
+{"time":"2025-01-11T16:04:49.764231679Z","level":"INFO","msg":"created new stream","id":"v2klqlin"}
+{"time":"2025-01-11T16:04:49.764264526Z","level":"INFO","msg":"stream: started","id":"v2klqlin"}
+{"time":"2025-01-11T16:04:49.764316353Z","level":"INFO","msg":"sender: started","stream_id":"v2klqlin"}
+{"time":"2025-01-11T16:04:49.764310323Z","level":"INFO","msg":"writer: Do: started","stream_id":"v2klqlin"}
+{"time":"2025-01-11T16:04:49.764341989Z","level":"INFO","msg":"handler: started","stream_id":"v2klqlin"}
+{"time":"2025-01-11T16:04:49.979346324Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T16:05:11.079344149Z","level":"INFO","msg":"stream: closing","id":"v2klqlin"}
+{"time":"2025-01-11T16:05:11.079377266Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T16:05:11.079992883Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T16:05:11.207606526Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-11T16:05:11.207622584Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-11T16:05:11.207626911Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-11T16:05:11.651996028Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T16:05:11.912770004Z","level":"INFO","msg":"handler: closed","stream_id":"v2klqlin"}
+{"time":"2025-01-11T16:05:11.912800684Z","level":"INFO","msg":"writer: Close: closed","stream_id":"v2klqlin"}
+{"time":"2025-01-11T16:05:11.912851206Z","level":"INFO","msg":"sender: closed","stream_id":"v2klqlin"}
+{"time":"2025-01-11T16:05:11.912861676Z","level":"INFO","msg":"stream: closed","id":"v2klqlin"}

@@ -1,0 +1,19 @@
+{"time":"2025-01-11T15:59:27.702696755Z","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-01-11T15:59:27.702722849Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250111_155927-xdbum57l/logs/debug-core.log"}
+{"time":"2025-01-11T15:59:27.811482894Z","level":"INFO","msg":"created new stream","id":"xdbum57l"}
+{"time":"2025-01-11T15:59:27.811523178Z","level":"INFO","msg":"stream: started","id":"xdbum57l"}
+{"time":"2025-01-11T15:59:27.811563244Z","level":"INFO","msg":"writer: Do: started","stream_id":"xdbum57l"}
+{"time":"2025-01-11T15:59:27.811607028Z","level":"INFO","msg":"handler: started","stream_id":"xdbum57l"}
+{"time":"2025-01-11T15:59:27.811625236Z","level":"INFO","msg":"sender: started","stream_id":"xdbum57l"}
+{"time":"2025-01-11T15:59:28.152748534Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T15:59:32.744298768Z","level":"INFO","msg":"stream: closing","id":"xdbum57l"}
+{"time":"2025-01-11T15:59:32.744333363Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T15:59:32.744916779Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T15:59:32.867768286Z","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-01-11T15:59:32.867778917Z","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-01-11T15:59:32.867783085Z","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-01-11T15:59:33.237320985Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T15:59:33.377142608Z","level":"INFO","msg":"handler: closed","stream_id":"xdbum57l"}
+{"time":"2025-01-11T15:59:33.377170145Z","level":"INFO","msg":"writer: Close: closed","stream_id":"xdbum57l"}
+{"time":"2025-01-11T15:59:33.377214014Z","level":"INFO","msg":"sender: closed","stream_id":"xdbum57l"}
+{"time":"2025-01-11T15:59:33.377237847Z","level":"INFO","msg":"stream: closed","id":"xdbum57l"}

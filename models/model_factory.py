@@ -38,13 +38,6 @@ from .custom_cnn_500k import CustomCNN500K
 from .custom_cnn_1m import CustomCNN1M
 from .custom_cnn_2m import CustomCNN2M
 
-# Advanced custom models with modern architectures
-from .advanced_custom_1 import AdvancedCustom1
-from .advanced_custom_2 import AdvancedCustom2
-from .advanced_custom_3 import AdvancedCustom3
-from .advanced_custom_4 import AdvancedCustom4
-from .advanced_custom_5 import AdvancedCustom5
-
 class ModelFactory:
     """Factory class to create model instances"""
     
@@ -82,14 +75,7 @@ class ModelFactory:
         "custom_cnn_100k": CustomCNN100K,
         "custom_cnn_500k": CustomCNN500K,
         "custom_cnn_1m": CustomCNN1M,
-        "custom_cnn_2m": CustomCNN2M,
-        
-        # Advanced custom models
-        "advanced_custom_1": AdvancedCustom1,
-        "advanced_custom_2": AdvancedCustom2,
-        "advanced_custom_3": AdvancedCustom3,
-        "advanced_custom_4": AdvancedCustom4,
-        "advanced_custom_5": AdvancedCustom5
+        "custom_cnn_2m": CustomCNN2M
     }
     
     @classmethod

@@ -1,0 +1,26 @@
+{
+    "horizontal_flip": {
+        "p": 0.5
+    },
+    "rotation": {
+        "degrees": 20
+    },
+    "scale_crop": {
+        "scale": [0.9, 1.1]
+    },
+    "brightness": {
+        "brightness": 0.1
+    },
+    "contrast": {
+        "contrast": 0.3
+    },
+    "saturation": {
+        "saturation": 0.3
+    },
+    "gaussian_blur": {
+        "sigma": [0.1, 1.0]
+    },
+    "gaussian_noise": {
+        "std": 0.02
+    }
+} 

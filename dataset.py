@@ -15,6 +15,7 @@ from rich.table import Table
 import matplotlib.pyplot as plt
 import seaborn as sns
 from config import *
+from augmentation_config import AugmentationConfig
 
 console = Console()
 
@@ -38,27 +39,19 @@ class LeafDataset(Dataset):
             
         return image, label
 
-def get_transforms(model_name: str = "default", train: bool = True) -> transforms.Compose:
-    """Get transforms for training/validation"""
+def get_transforms(model_name: str = "default", train: bool = True, augmentation_config: dict = None) -> transforms.Compose:
+    """Get transforms for training/validation with optional custom augmentation configuration"""
     image_size = get_image_size(model_name)
     
-    if train:
-        return transforms.Compose([
-            transforms.Resize((image_size, image_size)),
-            transforms.RandomHorizontalFlip(),
-            transforms.RandomRotation(10),
-            transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], 
-                               std=[0.229, 0.224, 0.225])
-        ])
+    if train and augmentation_config is not None:
+        # Use custom augmentation configuration
+        return AugmentationConfig.get_augmented_transforms(image_size, augmentation_config, train=True)
+    elif train and augmentation_config is None:
+        # Use baseline transforms (no augmentation) for fair comparison
+        return AugmentationConfig.get_baseline_transforms(image_size, train=True)
     else:
-        return transforms.Compose([
-            transforms.Resize((image_size, image_size)),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], 
-                               std=[0.229, 0.224, 0.225])
-        ])
+        # Validation/test transforms (always baseline)
+        return AugmentationConfig.get_baseline_transforms(image_size, train=False)
 
 def load_data_single_directory(data_root: Path, val_size: float, test_size: float) -> Tuple[List, List, List, List, List, List, Dict]:
     """Load data from a single directory structure and split into train/val/test"""
@@ -122,8 +115,8 @@ def load_data_split_directory(train_dir: Path, val_dir: Path, test_dir: Path) ->
     
     return X_train, X_val, X_test, y_train, y_val, y_test, class_to_idx
 
-def load_data(dataset_name: str, model_name: str = "default") -> Tuple[DataLoader, DataLoader, DataLoader, Dict]:
-    """Load and prepare data based on dataset configuration"""
+def load_data(dataset_name: str, model_name: str = "default", augmentation_config: dict = None) -> Tuple[DataLoader, DataLoader, DataLoader, Dict]:
+    """Load and prepare data based on dataset configuration with optional augmentation"""
     dataset_config = get_dataset_config(dataset_name)
     
     if dataset_config['type'] == 'single_directory':
@@ -135,8 +128,8 @@ def load_data(dataset_name: str, model_name: str = "default") -> Tuple[DataLoade
             dataset_config['train_dir'], dataset_config['val_dir'], dataset_config['test_dir']
         )
     
-    # Create datasets
-    train_dataset = LeafDataset(X_train, y_train, transform=get_transforms(model_name, train=True))
+    # Create datasets with augmentation configuration
+    train_dataset = LeafDataset(X_train, y_train, transform=get_transforms(model_name, train=True, augmentation_config=augmentation_config))
     val_dataset = LeafDataset(X_val, y_val, transform=get_transforms(model_name, train=False))
     test_dataset = LeafDataset(X_test, y_test, transform=get_transforms(model_name, train=False))
     

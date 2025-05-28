@@ -1,0 +1,11 @@
+{
+    "horizontal_flip": {
+        "p": 0.5
+    },
+    "rotation": {
+        "degrees": 20
+    },
+    "brightness": {
+        "brightness": 0.1
+    }
+} 

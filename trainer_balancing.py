@@ -81,8 +81,8 @@ class BalancingTrainer:
         class_counts = Counter()
         for _, targets in loader:
             for target in targets:
-                class_counts[target.item()] += 1
-        return dict(class_counts)
+                class_counts[int(target.item())] += 1
+        return {int(k): int(v) for k, v in class_counts.items()}
     
     def train_epoch(self) -> float:
         """Train for one epoch"""
@@ -301,8 +301,8 @@ class BalancingTrainer:
             "experiment_info": {
                 "balancing_technique": self.balancing_technique,
                 "loss_function": self.loss_function_type,
-                "train_class_distribution": self.train_class_counts,
-                "val_class_distribution": self.val_class_counts
+                "train_class_distribution": {str(k): int(v) for k, v in self.train_class_counts.items()},
+                "val_class_distribution": {str(k): int(v) for k, v in self.val_class_counts.items()}
             },
             "test_performance": {
                 "overall_accuracy": report['accuracy'],
@@ -327,8 +327,8 @@ class BalancingTrainer:
         predicted_class_counts = Counter(preds)
         
         balancing_analysis["class_distribution_analysis"] = {
-            "test_class_distribution": dict(test_class_counts),
-            "predicted_class_distribution": dict(predicted_class_counts),
+            "test_class_distribution": {str(k): int(v) for k, v in test_class_counts.items()},
+            "predicted_class_distribution": {str(k): int(v) for k, v in predicted_class_counts.items()},
             "test_imbalance_ratio": max(test_class_counts.values()) / min(test_class_counts.values()) if test_class_counts else 1
         }
         

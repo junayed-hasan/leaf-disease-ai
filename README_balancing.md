@@ -71,6 +71,12 @@ python train_balancing.py --model shufflenet_v2 --dataset combined --loss_functi
 
 # Combined: SMOTE + Focal Loss
 python train_balancing.py --model shufflenet_v2 --dataset combined --balancing_technique smote --loss_function focal_loss
+
+# Combined: ADASYN + Focal Loss
+python train_balancing.py --model shufflenet_v2 --dataset combined --balancing_technique adasyn --loss_function focal_loss
+
+# Combined: Random Oversampling + Focal Loss
+python train_balancing.py --model shufflenet_v2 --dataset combined --balancing_technique random_oversampling --loss_function focal_loss
 ```
 
 ### 2. Systematic Experiments
@@ -93,9 +99,9 @@ python run_balancing_experiments.py --model shufflenet_v2 --dataset combined --g
 - **resampling** - Random oversampling, SMOTE, ADASYN (3 experiments)
 - **augmentation** - Offline augmentation (1 experiment)  
 - **loss_function** - Focal loss only (1 experiment)
-- **combined** - Combined techniques (2 experiments)
+- **combined** - Combined techniques (4 experiments)
 
-**Total: 8 experiments**
+**Total: 10 experiments**
 
 ## Data Balancing Techniques
 

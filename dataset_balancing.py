@@ -14,7 +14,8 @@ from collections import Counter
 from typing import Dict, List, Tuple, Optional, Any
 from rich.console import Console
 
-from dataset import TomatoDiseaseDataset, get_image_size
+from dataset import LeafDataset, load_data, get_dataset_config, load_data_single_directory, load_data_split_directory
+from config import get_image_size, VAL_SIZE, TEST_SIZE
 from data_balancing_config import (
     DataBalancingConfig, 
     OfflineAugmentationDataset
@@ -41,8 +42,8 @@ def get_class_counts(dataset: Dataset) -> Dict[int, int]:
     class_counts = Counter()
     for i in range(len(dataset)):
         _, label = dataset[i]
-        class_counts[label] += 1
-    return dict(class_counts)
+        class_counts[int(label)] += 1
+    return {int(k): int(v) for k, v in class_counts.items()}
 
 def extract_features_for_resampling(dataset: Dataset, image_size: int) -> Tuple[np.ndarray, np.ndarray]:
     """Extract features and labels for resampling techniques like SMOTE and ADASYN"""
@@ -129,9 +130,9 @@ def create_offline_augmented_dataset(dataset: Dataset, class_counts: Dict[int, i
     
     console.print(f"Target samples per class: {target_samples_per_class}")
     
-    # Create transform for final processing
+    # Always create a complete transform chain for offline augmentation
+    # Since augmented images will be PIL images, we need the full pipeline
     transform = transforms.Compose([
-        transforms.ToPILImage() if not isinstance(dataset[0][0], torch.Tensor) else transforms.Lambda(lambda x: x),
         transforms.Resize((image_size, image_size)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -157,64 +158,44 @@ def load_balanced_data(dataset_name: str, model_name: str,
                       batch_size: int = 32) -> Tuple[DataLoader, DataLoader, DataLoader, Dict[str, int]]:
     """Load data with specified balancing technique"""
     
-    # Get image size for model
-    image_size = get_image_size(model_name)
+    # First load the data using the existing load_data function
+    train_loader, val_loader, test_loader, class_to_idx = load_data(
+        dataset_name, model_name, augmentation_config
+    )
     
-    # Define transforms
-    train_transform = transforms.Compose([
-        transforms.Resize((image_size, image_size)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-    ])
+    # If no balancing technique is specified, return the original loaders
+    if not balancing_technique or balancing_technique == "focal_loss":
+        return train_loader, val_loader, test_loader, class_to_idx
     
-    val_test_transform = transforms.Compose([
-        transforms.Resize((image_size, image_size)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-    ])
-    
-    # Load original datasets
-    if dataset_name == 'plantvillage':
-        train_dataset = TomatoDiseaseDataset('data/PlantVillage', split='train', transform=train_transform)
-        val_dataset = TomatoDiseaseDataset('data/PlantVillage', split='val', transform=val_test_transform)
-        test_dataset = TomatoDiseaseDataset('data/PlantVillage', split='test', transform=val_test_transform)
-    elif dataset_name == 'tomatovillage':
-        train_dataset = TomatoDiseaseDataset('data/tomatovillage', split='train', transform=train_transform)
-        val_dataset = TomatoDiseaseDataset('data/tomatovillage', split='val', transform=val_test_transform)
-        test_dataset = TomatoDiseaseDataset('data/tomatovillage', split='test', transform=val_test_transform)
-    elif dataset_name == 'combined':
-        # Load PlantVillage
-        pv_train = TomatoDiseaseDataset('data/PlantVillage', split='train', transform=train_transform)
-        pv_val = TomatoDiseaseDataset('data/PlantVillage', split='val', transform=val_test_transform)
-        pv_test = TomatoDiseaseDataset('data/PlantVillage', split='test', transform=val_test_transform)
-        
-        # Load TomatoVillage
-        tv_train = TomatoDiseaseDataset('data/tomatovillage', split='train', transform=train_transform)
-        tv_val = TomatoDiseaseDataset('data/tomatovillage', split='val', transform=val_test_transform)
-        tv_test = TomatoDiseaseDataset('data/tomatovillage', split='test', transform=val_test_transform)
-        
-        # Combine datasets
-        train_dataset = torch.utils.data.ConcatDataset([pv_train, tv_train])
-        val_dataset = torch.utils.data.ConcatDataset([pv_val, tv_val])
-        test_dataset = torch.utils.data.ConcatDataset([pv_test, tv_test])
-    else:
-        raise ValueError(f"Unknown dataset: {dataset_name}")
-    
-    # Get class mapping from first component dataset
-    if dataset_name == 'combined':
-        class_to_idx = pv_train.class_to_idx
-    else:
-        class_to_idx = train_dataset.class_to_idx
+    # Extract the dataset from the train_loader for balancing
+    train_dataset = train_loader.dataset
     
     # Get original class distribution
     original_counts = get_class_counts(train_dataset)
     console.print(f"Original training class distribution: {original_counts}")
     
     # Apply balancing technique to training set only
-    if balancing_technique and balancing_technique in ["random_oversampling", "smote", "adasyn"]:
+    if balancing_technique in ["random_oversampling", "smote", "adasyn"]:
+        # Get image size for model
+        image_size = get_image_size(model_name)
         train_dataset = apply_resampling(train_dataset, balancing_technique, image_size)
         
     elif balancing_technique == "offline_augmentation":
+        # For offline augmentation, we need to work with raw images before transforms
+        # Create a raw dataset without transforms
+        dataset_config = get_dataset_config(dataset_name)
+        if dataset_config['type'] == 'single_directory':
+            X_train, _, _, y_train, _, _, _ = load_data_single_directory(
+                dataset_config['root'], VAL_SIZE, TEST_SIZE
+            )
+        else:
+            X_train, _, _, y_train, _, _, _ = load_data_split_directory(
+                dataset_config['train_dir'], dataset_config['val_dir'], dataset_config['test_dir']
+            )
+        
+        # Create raw dataset without transforms
+        raw_train_dataset = LeafDataset(X_train, y_train, transform=None)
+        
         # Create offline augmented dataset
         if augmentation_config is None:
             console.print("[yellow]Warning: No augmentation config provided for offline augmentation[/yellow]")
@@ -224,14 +205,19 @@ def load_balanced_data(dataset_name: str, model_name: str,
                 "brightness": {"brightness": 0.1}
             }
         
+        # Get image size for model
+        image_size = get_image_size(model_name)
         train_dataset = create_offline_augmented_dataset(
-            train_dataset, original_counts, augmentation_config, image_size
+            raw_train_dataset, original_counts, augmentation_config, image_size
         )
     
-    # Create data loaders
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
+    # Create new train data loader with balanced dataset
+    train_loader = DataLoader(
+        train_dataset, 
+        batch_size=batch_size, 
+        shuffle=True, 
+        num_workers=4
+    )
     
     return train_loader, val_loader, test_loader, class_to_idx
 
@@ -239,20 +225,9 @@ def analyze_balanced_dataset(dataset_name: str, balancing_technique: Optional[st
                            save_dir: Path) -> Dict[str, Any]:
     """Analyze dataset after balancing"""
     
-    # Load a sample dataset to get statistics
-    sample_transform = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.ToTensor()
-    ])
-    
-    if dataset_name == 'plantvillage':
-        sample_dataset = TomatoDiseaseDataset('data/PlantVillage', split='train', transform=sample_transform)
-    elif dataset_name == 'tomatovillage':
-        sample_dataset = TomatoDiseaseDataset('data/tomatovillage', split='train', transform=sample_transform)
-    elif dataset_name == 'combined':
-        pv_train = TomatoDiseaseDataset('data/PlantVillage', split='train', transform=sample_transform)
-        tv_train = TomatoDiseaseDataset('data/tomatovillage', split='train', transform=sample_transform)
-        sample_dataset = torch.utils.data.ConcatDataset([pv_train, tv_train])
+    # Load a sample dataset to get statistics using existing load_data function
+    train_loader, _, _, _ = load_data(dataset_name, "default", None)
+    sample_dataset = train_loader.dataset
     
     original_counts = get_class_counts(sample_dataset)
     

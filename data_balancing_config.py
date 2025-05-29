@@ -13,6 +13,8 @@ from typing import Dict, List, Any, Optional, Tuple
 from imblearn.over_sampling import RandomOverSampler, SMOTE, ADASYN
 import cv2
 from pathlib import Path
+from PIL import Image
+from torchvision import transforms
 
 class FocalLoss(nn.Module):
     """Focal Loss for addressing class imbalance"""
@@ -183,11 +185,14 @@ class OfflineAugmentationDataset(Dataset):
         original_idx, aug_version = self.augmented_indices[idx]
         image, label = self.original_dataset[original_idx]
         
+        # The original_dataset now returns PIL images (no transforms applied)
         # Apply augmentation if needed
         if aug_version > 0:
+            # Apply augmentation (image is already PIL, returns PIL)
             image = self._apply_augmentation(image, aug_version)
+        # If aug_version == 0, image is already PIL, no augmentation needed
         
-        # Apply final transform
+        # Apply final transform (PIL -> Tensor with normalization)
         if self.transform:
             image = self.transform(image)
             
@@ -195,44 +200,38 @@ class OfflineAugmentationDataset(Dataset):
     
     def _apply_augmentation(self, image, aug_version):
         """Apply specific augmentation based on version"""
-        # Convert tensor to numpy if needed
-        if isinstance(image, torch.Tensor):
-            image = image.permute(1, 2, 0).numpy()
-            image = (image * 255).astype(np.uint8)
+        import random
+        from PIL import Image, ImageEnhance
         
-        # Apply augmentations based on config and version
+        # Image is already a PIL Image from the raw dataset
+        image_pil = image
+        
+        # Apply augmentations using PIL operations
         if aug_version == 1 and "horizontal_flip" in self.augmentation_config:
-            if np.random.random() < self.augmentation_config["horizontal_flip"]["p"]:
-                image = cv2.flip(image, 1)
+            if random.random() < self.augmentation_config["horizontal_flip"]["p"]:
+                image_pil = image_pil.transpose(Image.FLIP_LEFT_RIGHT)
         
         if aug_version == 2 and "rotation" in self.augmentation_config:
-            angle = np.random.uniform(-self.augmentation_config["rotation"]["degrees"], 
-                                    self.augmentation_config["rotation"]["degrees"])
-            center = (image.shape[1]//2, image.shape[0]//2)
-            matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
-            image = cv2.warpAffine(image, matrix, (image.shape[1], image.shape[0]))
+            angle = random.uniform(-self.augmentation_config["rotation"]["degrees"], 
+                                 self.augmentation_config["rotation"]["degrees"])
+            image_pil = image_pil.rotate(angle, expand=False, fillcolor=(0, 0, 0))
         
         if aug_version == 3 and "brightness" in self.augmentation_config:
-            brightness_factor = 1.0 + np.random.uniform(-self.augmentation_config["brightness"]["brightness"],
-                                                       self.augmentation_config["brightness"]["brightness"])
-            image = np.clip(image * brightness_factor, 0, 255).astype(np.uint8)
+            brightness_factor = 1.0 + random.uniform(-self.augmentation_config["brightness"]["brightness"],
+                                                    self.augmentation_config["brightness"]["brightness"])
+            enhancer = ImageEnhance.Brightness(image_pil)
+            image_pil = enhancer.enhance(brightness_factor)
         
         # Add more augmentation versions as needed
         if aug_version >= 4:
             # Combine multiple augmentations
-            if np.random.random() < 0.5 and "horizontal_flip" in self.augmentation_config:
-                image = cv2.flip(image, 1)
-            if np.random.random() < 0.5 and "rotation" in self.augmentation_config:
-                angle = np.random.uniform(-10, 10)
-                center = (image.shape[1]//2, image.shape[0]//2)
-                matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
-                image = cv2.warpAffine(image, matrix, (image.shape[1], image.shape[0]))
+            if random.random() < 0.5 and "horizontal_flip" in self.augmentation_config:
+                image_pil = image_pil.transpose(Image.FLIP_LEFT_RIGHT)
+            if random.random() < 0.5 and "rotation" in self.augmentation_config:
+                angle = random.uniform(-10, 10)
+                image_pil = image_pil.rotate(angle, expand=False, fillcolor=(0, 0, 0))
         
-        # Convert back to tensor format
-        image = image.astype(np.float32) / 255.0
-        image = torch.tensor(image).permute(2, 0, 1)
-        
-        return image
+        return image_pil
 
 class DataBalancingExperiments:
     """Define systematic data balancing experiments"""

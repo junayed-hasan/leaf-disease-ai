@@ -4,7 +4,6 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-green.svg)](https://github.com/junayed-hasan/lightweight-tomato)
-[![Mobile App](https://img.shields.io/badge/Mobile-Flutter-blue.svg)](https://github.com/junayed-hasan/lightweight-tomato)
 
 ![TomatoLeaf-AI Architecture](archi_tomato.png)
 
@@ -17,7 +16,7 @@
 - **First Open Cross-Domain Benchmark**: Unifying PlantVillage and TomatoVillage datasets into 15 harmonized disease classes
 - **Unified Optimization Framework**: Integrating ensemble learning, knowledge distillation, and quantization
 - **Edge-Compatible Deployment**: Achieving 671× compression (1.46 MB) with 97.46% accuracy
-- **Real-World Validation**: Multilingual Flutter mobile application for field deployment
+- **Real-World Validation**: Cross-domain evaluation on field condition datasets
 - **Explainable AI**: Grad-CAM++ and LIME-based interpretability analysis
 
 ### 📊 Performance Highlights
@@ -45,13 +44,12 @@ TomatoLeaf-AI/
 │   ├── models/                  # Model architectures
 │   ├── quantization/            # Model quantization
 │   └── utils/                   # Utility functions
-├── data/                        # Datasets
+├── data/                        # Datasets (available under data/)
 │   ├── combined/                # Unified dataset
-│   ├── plantvillage/           # PlantVillage dataset
-│   └── tomatovillage/          # TomatoVillage dataset
+│   ├── plantvillage/           # PlantVillage dataset (lab conditions)
+│   └── tomatovillage/          # TomatoVillage dataset (field conditions)
 ├── docs/                        # Documentation
 ├── scripts/                     # Training and evaluation scripts
-├── mobile_app/                  # Flutter mobile application
 ├── outputs/                     # Model outputs and results
 └── checkpoints/                 # Trained model checkpoints
 ```
@@ -69,66 +67,44 @@ pip install -r requirements_balancing.txt
 ### Dataset Preparation
 
 1. **Download Datasets**:
-   ```bash
-   # PlantVillage dataset
-   wget [PlantVillage_URL] -O data/plantvillage/
+   - **PlantVillage**: https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
+   - **TomatoVillage**: https://github.com/mamta-joshi-gehlot/Tomato-Village
    
-   # TomatoVillage dataset  
-   wget [TomatoVillage_URL] -O data/tomatovillage/
-   ```
+   Extract datasets to `data/plantvillage/` and `data/tomatovillage/` respectively.
 
-2. **Create Combined Dataset**:
-   ```bash
-   python src/datasets/dataset.py --create_combined
-   ```
+2. **Datasets are available under data/ directory**
 
 ### Training Pipeline
 
 #### 1. Baseline Training
 ```bash
-python scripts/train.py --model densenet121 --epochs 100 --batch_size 32
+python scripts/train.py --model densenet121 --dataset combined --epochs 100
 ```
 
 #### 2. Ensemble Training
 ```bash
-python src/ensemble/train_best_ensemble.py --models densenet121,resnet101,densenet201,efficientnet_b4
+python src/ensemble/train_best_ensemble.py
 ```
 
 #### 3. Knowledge Distillation
 ```bash
-python src/distillation/train_best_kd.py --teacher_ensemble --student shufflenet_v2 --temperature 5
+python src/distillation/train_best_kd.py
 ```
 
 #### 4. Quantization
 ```bash
-python src/quantization/mobile_quantization_pipeline.py --model shufflenet_v2 --quantization int8
+python src/quantization/mobile_quantization_pipeline.py
 ```
 
 ### Evaluation
 
 ```bash
 # Cross-domain evaluation
-python src/evaluation/evaluate_kd_on_test_datasets.py --model_path checkpoints/best_kd_model.pth
+python src/evaluation/evaluate_kd_on_test_datasets.py
 
 # Interpretability analysis
-python src/explainable_ai/interpretability_analysis.py --model_path checkpoints/best_model.pth
+python src/explainable_ai/interpretability_analysis.py
 ```
-
-## 📱 Mobile Deployment
-
-The repository includes a Flutter-based mobile application for real-world deployment:
-
-```bash
-cd mobile_app/
-flutter pub get
-flutter run
-```
-
-**Features**:
-- Real-time disease detection
-- Multilingual support (English, Bengali, Spanish)
-- Offline inference capability
-- Treatment recommendations
 
 ## 🔬 Research Methodology
 
@@ -197,16 +173,13 @@ The framework detects 15 tomato leaf disease classes:
 
 Detailed documentation is available in the `docs/` directory:
 
-- [Installation Guide](docs/INSTALL_ONNX_DEPENDENCIES.md)
-- [Knowledge Distillation](docs/KD_README.md)
-- [Data Balancing](docs/README_balancing.md)
-- [Augmentation Experiments](docs/README_AUGMENTATION_EXPERIMENTS.md)
-- [Computational Analysis](docs/README_COMPUTATIONAL_ANALYSIS.md)
-- [Interpretability Analysis](docs/README_INTERPRETABILITY.md)
+- [Installation Guide](docs/INSTALLATION.md)
+- [Project Overview](docs/PROJECT_OVERVIEW.md)
+- [Repository Structure](docs/REPOSITORY_STRUCTURE.md)
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our contributing guidelines:
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md):
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -267,7 +240,6 @@ SOFTWARE.
 - PlantVillage dataset contributors
 - TomatoVillage dataset contributors
 - PyTorch and timm library developers
-- Flutter development team
 - Agricultural research community
 
 ---

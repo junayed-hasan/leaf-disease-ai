@@ -1,4 +1,4 @@
-# TomatoLeaf-AI: Cross-Domain Tomato Leaf Disease Detection
+# TomatoLeaf-AI: Deployable Deep Learning for Cross-Domain Plant Leaf Disease Detection via Ensemble Learning, Knowledge Distillation, and Quantization
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -72,7 +72,7 @@ pip install -r requirements_balancing.txt
    
    Extract datasets to `data/plantvillage/` and `data/tomatovillage/` respectively.
 
-2. **Datasets are available under data/ directory**
+2. **Datasets are also available under data/ directory**
 
 ### Training Pipeline
 
@@ -189,23 +189,14 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ## 📄 Citation
 
-If you use this work in your research, please cite:
-
-```bibtex
-@article{hasan2024tomatoleaf,
-  title={TomatoLeaf-AI: Cross-Domain Tomato Leaf Disease Detection with Unified Optimization Framework},
-  author={Mohammad Junayed Hasan},
-  journal={arXiv preprint arXiv:2024.xxxxx},
-  year={2024}
-}
-```
+If you use this work in your research, please cite: [citation coming soon]
 
 ## 📞 Contact
 
 **Mohammad Junayed Hasan**
-- Email: [your-email@domain.com]
+- Email: junayedhasan100@gmail.com
 - GitHub: [@junayed-hasan](https://github.com/junayed-hasan)
-- LinkedIn: [Your LinkedIn Profile]
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/mjhasan21/)
 
 ## 📜 License
 

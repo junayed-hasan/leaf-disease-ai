@@ -1,8 +1,0 @@
-{"time":"2025-01-12T05:05:28.672824475Z","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2025-01-12T05:05:28.672835839Z","level":"INFO","msg":"created symlink","path":"/home/myuser/tomato_leaf_disease/wandb/run-20250112_050528-304u36f9/logs/debug-core.log"}
-{"time":"2025-01-12T05:05:28.775376412Z","level":"INFO","msg":"created new stream","id":"304u36f9"}
-{"time":"2025-01-12T05:05:28.775411098Z","level":"INFO","msg":"stream: started","id":"304u36f9"}
-{"time":"2025-01-12T05:05:28.775441348Z","level":"INFO","msg":"writer: Do: started","stream_id":"304u36f9"}
-{"time":"2025-01-12T05:05:28.775456942Z","level":"INFO","msg":"sender: started","stream_id":"304u36f9"}
-{"time":"2025-01-12T05:05:28.775508023Z","level":"INFO","msg":"handler: started","stream_id":"304u36f9"}
-{"time":"2025-01-12T05:05:29.004577195Z","level":"INFO","msg":"Starting system monitor"}

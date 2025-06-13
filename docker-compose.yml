@@ -1,0 +1,169 @@
+version: '3.8'
+
+services:
+  # Development environment with GPU support
+  tomatoleaf-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: tomatoleaf-dev
+    volumes:
+      - .:/workspace
+      - ./data:/workspace/data
+      - ./outputs:/workspace/outputs
+      - ./checkpoints:/workspace/checkpoints
+      - ./wandb:/workspace/wandb
+    ports:
+      - "8888:8888"  # Jupyter
+      - "6006:6006"  # TensorBoard
+      - "8080:8080"  # Custom web interface
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONPATH=/workspace
+      - WANDB_API_KEY=${WANDB_API_KEY}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    stdin_open: true
+    tty: true
+    command: bash
+
+  # Production training environment
+  tomatoleaf-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: tomatoleaf-prod
+    volumes:
+      - ./data:/workspace/data:ro
+      - ./outputs:/workspace/outputs
+      - ./checkpoints:/workspace/checkpoints
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONPATH=/workspace
+      - WANDB_API_KEY=${WANDB_API_KEY}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    profiles:
+      - production
+
+  # Mobile/Edge inference service
+  tomatoleaf-mobile:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: mobile
+    container_name: tomatoleaf-mobile
+    volumes:
+      - ./checkpoints:/workspace/checkpoints:ro
+    ports:
+      - "5000:5000"  # Inference API
+    environment:
+      - CUDA_VISIBLE_DEVICES=""
+      - OMP_NUM_THREADS=1
+    profiles:
+      - mobile
+
+  # Jupyter notebook service
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: tomatoleaf-jupyter
+    volumes:
+      - .:/workspace
+      - ./data:/workspace/data
+      - ./outputs:/workspace/outputs
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYTHONPATH=/workspace
+    command: >
+      bash -c "
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+        --NotebookApp.token='' --NotebookApp.password=''
+      "
+    profiles:
+      - jupyter
+
+  # TensorBoard service
+  tensorboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: tomatoleaf-tensorboard
+    volumes:
+      - ./outputs/logs:/workspace/logs:ro
+      - ./wandb:/workspace/wandb:ro
+    ports:
+      - "6006:6006"
+    command: tensorboard --logdir=/workspace/logs --host=0.0.0.0 --port=6006
+    profiles:
+      - tensorboard
+
+  # Database for experiment tracking (optional)
+  postgres:
+    image: postgres:13
+    container_name: tomatoleaf-db
+    environment:
+      - POSTGRES_DB=tomatoleaf
+      - POSTGRES_USER=tomatoleaf
+      - POSTGRES_PASSWORD=tomatoleaf123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    profiles:
+      - database
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: tomatoleaf-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    profiles:
+      - cache
+
+  # MLflow tracking server (optional)
+  mlflow:
+    image: python:3.9-slim
+    container_name: tomatoleaf-mlflow
+    volumes:
+      - ./mlruns:/mlruns
+    ports:
+      - "5001:5000"
+    environment:
+      - MLFLOW_BACKEND_STORE_URI=sqlite:///mlruns/mlflow.db
+      - MLFLOW_DEFAULT_ARTIFACT_ROOT=/mlruns
+    command: >
+      bash -c "
+        pip install mlflow &&
+        mlflow server --host 0.0.0.0 --port 5000
+      "
+    profiles:
+      - mlflow
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  default:
+    name: tomatoleaf-network 

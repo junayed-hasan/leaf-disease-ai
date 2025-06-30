@@ -1,15 +1,15 @@
-# TomatoLeaf-AI: Deployable Deep Learning for Cross-Domain Plant Leaf Disease Detection via Ensemble Learning, Knowledge Distillation, and Quantization
+# LeafDisease-AI: Deployable Deep Learning for Cross-Domain Plant Leaf Disease Detection via Ensemble Learning, Knowledge Distillation, and Quantization
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-green.svg)](https://github.com/junayed-hasan/lightweight-tomato)
 
-![TomatoLeaf-AI Architecture](archi_tomato.png)
+![LeafDisease-AI Architecture](archi_tomato.png)
 
 ## 🌟 Overview
 
-**TomatoLeaf-AI** is the first comprehensive framework for cross-domain tomato leaf disease detection, bridging the gap between laboratory research and real-world agricultural deployment. This repository implements a unified optimization approach integrating ensemble learning, knowledge distillation, and quantization for edge-compatible disease detection.
+**LeafDisease-AI** is the first comprehensive framework for cross-domain tomato leaf disease detection, bridging the gap between laboratory research and real-world agricultural deployment. This repository implements a unified optimization approach integrating ensemble learning, knowledge distillation, and quantization for edge-compatible disease detection.
 
 ### 🎯 Key Contributions
 
@@ -30,7 +30,7 @@
 ## 🏗️ Repository Structure
 
 ```
-TomatoLeaf-AI/
+LeafDisease-AI/
 ├── src/                          # Source code
 │   ├── configurations/           # Configuration files
 │   ├── data_augmentation/        # Data augmentation strategies
